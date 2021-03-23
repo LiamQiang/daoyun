@@ -1,7 +1,0 @@
-POST http://172.17.168.225:8001/userservice/user/login
-Content-Type: application/json
-
-{
-    "userTele": "1311078799",
-    "userPwd": "123456"
-}
