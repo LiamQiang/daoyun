@@ -1,6 +1,6 @@
 # DataSource Config
 server:
-  port: 8181
+  port: 8081
 
 spring:
   datasource:

@@ -1,6 +1,6 @@
 package com.lq.daoyun.service.impl;
 
-import com.lq.daoyun.Entity.Admin;
+import com.lq.daoyun.entity.Admin;
 import com.lq.daoyun.mapper.AdminMapper;
 import com.lq.daoyun.service.IAdminService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;

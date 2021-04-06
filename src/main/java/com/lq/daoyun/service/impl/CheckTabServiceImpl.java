@@ -1,6 +1,6 @@
 package com.lq.daoyun.service.impl;
 
-import com.lq.daoyun.Entity.CheckTab;
+import com.lq.daoyun.entity.CheckTab;
 import com.lq.daoyun.mapper.CheckTabMapper;
 import com.lq.daoyun.service.ICheckTabService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;

@@ -1,8 +1,8 @@
-package com.lq.daoyun.Entity;
+package com.lq.daoyun.entity;
 
+import java.time.LocalDateTime;
 import java.io.Serializable;
 import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
@@ -18,14 +18,22 @@ import lombok.experimental.Accessors;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@ApiModel(value="RoleTab对象", description="")
-public class RoleTab implements Serializable {
+@ApiModel(value="SignIn对象", description="")
+public class SignIn implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private String name;
+    private Integer userid;
 
-    private Integer menuId;
+    private Integer signInType;
+
+    private LocalDateTime enddate;
+
+    private String publisher;
+
+    private Integer classid;
+
+    private LocalDateTime startdate;
 
 
 }

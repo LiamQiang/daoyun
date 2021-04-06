@@ -1,6 +1,6 @@
 package com.lq.daoyun.service;
 
-import com.lq.daoyun.Entity.SignInMemory;
+import com.lq.daoyun.entity.SignInMemory;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**

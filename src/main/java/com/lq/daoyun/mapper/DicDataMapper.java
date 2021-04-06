@@ -1,6 +1,6 @@
 package com.lq.daoyun.mapper;
 
-import com.lq.daoyun.Entity.DicData;
+import com.lq.daoyun.entity.DicData;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**

@@ -1,6 +1,6 @@
 package com.lq.daoyun.service.impl;
 
-import com.lq.daoyun.Entity.Exp;
+import com.lq.daoyun.entity.Exp;
 import com.lq.daoyun.mapper.ExpMapper;
 import com.lq.daoyun.service.IExpService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;

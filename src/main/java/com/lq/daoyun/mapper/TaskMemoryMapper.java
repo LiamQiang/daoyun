@@ -1,6 +1,6 @@
 package com.lq.daoyun.mapper;
 
-import com.lq.daoyun.Entity.TaskMemory;
+import com.lq.daoyun.entity.TaskMemory;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**

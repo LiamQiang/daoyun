@@ -1,6 +1,6 @@
 package com.lq.daoyun.mapper;
 
-import com.lq.daoyun.Entity.SignIn;
+import com.lq.daoyun.entity.SignIn;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**

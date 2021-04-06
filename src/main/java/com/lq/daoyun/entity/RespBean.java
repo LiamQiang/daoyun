@@ -1,7 +1,6 @@
-package com.lq.daoyun.Entity;
+package com.lq.daoyun.entity;
 
 
-import com.baomidou.mybatisplus.extension.api.R;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

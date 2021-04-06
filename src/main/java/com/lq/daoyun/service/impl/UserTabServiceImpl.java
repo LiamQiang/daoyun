@@ -1,6 +1,6 @@
 package com.lq.daoyun.service.impl;
 
-import com.lq.daoyun.Entity.UserTab;
+import com.lq.daoyun.entity.UserTab;
 import com.lq.daoyun.mapper.UserTabMapper;
 import com.lq.daoyun.service.IUserTabService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;

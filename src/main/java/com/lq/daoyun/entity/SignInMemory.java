@@ -1,9 +1,8 @@
-package com.lq.daoyun.Entity;
+package com.lq.daoyun.entity;
 
 import java.time.LocalDateTime;
 import java.io.Serializable;
 import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
@@ -19,22 +18,22 @@ import lombok.experimental.Accessors;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@ApiModel(value="SignIn对象", description="")
-public class SignIn implements Serializable {
+@ApiModel(value="SignInMemory对象", description="")
+public class SignInMemory implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private Integer userid;
-
-    private Integer signInType;
+    private LocalDateTime startdate;
 
     private LocalDateTime enddate;
 
-    private String publisher;
+    private String signInType;
 
-    private Integer classid;
+    private String number;
 
-    private LocalDateTime startdate;
+    private Integer state;
+
+    private String name;
 
 
 }

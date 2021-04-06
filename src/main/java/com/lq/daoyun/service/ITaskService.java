@@ -1,6 +1,6 @@
 package com.lq.daoyun.service;
 
-import com.lq.daoyun.Entity.Task;
+import com.lq.daoyun.entity.Task;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**

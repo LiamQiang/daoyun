@@ -1,6 +1,6 @@
 package com.lq.daoyun.mapper;
 
-import com.lq.daoyun.Entity.UserTab;
+import com.lq.daoyun.entity.UserTab;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**

@@ -1,9 +1,8 @@
-package com.lq.daoyun.Entity;
+package com.lq.daoyun.entity;
 
 import java.time.LocalDateTime;
 import java.io.Serializable;
 import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
@@ -19,28 +18,26 @@ import lombok.experimental.Accessors;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@ApiModel(value="Menu对象", description="")
-public class Menu implements Serializable {
+@ApiModel(value="DicType对象", description="")
+public class DicType implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private Integer parentmenuNumber;
+    private String paraname;
 
-    private String menuname;
+    private Integer code;
 
-    private String buttonEnglishLogo;
+    private String description;
 
-    private String buttonChineseLogo;
+    private Integer identity;
 
-    private Integer isMenu;
+    private Integer creator;
 
-    private String creator;
-
-    private LocalDateTime creationdate;
+    private LocalDateTime creatordate;
 
     private LocalDateTime modificationdate;
 
-    private String modifier;
+    private Integer modifier;
 
 
 }

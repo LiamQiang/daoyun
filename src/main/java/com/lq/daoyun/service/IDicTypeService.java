@@ -1,6 +1,6 @@
 package com.lq.daoyun.service;
 
-import com.lq.daoyun.Entity.DicType;
+import com.lq.daoyun.entity.DicType;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**

@@ -1,6 +1,6 @@
 package com.lq.daoyun.service.impl;
 
-import com.lq.daoyun.Entity.SignIn;
+import com.lq.daoyun.entity.SignIn;
 import com.lq.daoyun.mapper.SignInMapper;
 import com.lq.daoyun.service.ISignInService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;

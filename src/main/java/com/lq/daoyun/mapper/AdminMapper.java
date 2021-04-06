@@ -1,6 +1,6 @@
 package com.lq.daoyun.mapper;
 
-import com.lq.daoyun.Entity.Admin;
+import com.lq.daoyun.entity.Admin;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
@@ -11,6 +11,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author LiamQ
  * @since 2021-04-05
  */
+
 public interface AdminMapper extends BaseMapper<Admin> {
 
 }

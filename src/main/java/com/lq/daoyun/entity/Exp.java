@@ -1,8 +1,7 @@
-package com.lq.daoyun.Entity;
+package com.lq.daoyun.entity;
 
 import java.io.Serializable;
 import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
@@ -18,16 +17,16 @@ import lombok.experimental.Accessors;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@ApiModel(value="Admin对象", description="")
-public class Admin implements Serializable {
+@ApiModel(value="Exp对象", description="")
+public class Exp implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     private String name;
 
-    private String account;
+    private Integer expvalue;
 
-    private String password;
+    private Integer classid;
 
 
 }

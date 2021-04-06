@@ -1,6 +1,6 @@
 package com.lq.daoyun.service.impl;
 
-import com.lq.daoyun.Entity.Menu;
+import com.lq.daoyun.entity.Menu;
 import com.lq.daoyun.mapper.MenuMapper;
 import com.lq.daoyun.service.IMenuService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;

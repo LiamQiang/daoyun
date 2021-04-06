@@ -1,6 +1,6 @@
 package com.lq.daoyun.service;
 
-import com.lq.daoyun.Entity.ClassTab;
+import com.lq.daoyun.entity.ClassTab;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**

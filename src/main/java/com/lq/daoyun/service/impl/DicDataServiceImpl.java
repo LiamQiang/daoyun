@@ -1,6 +1,6 @@
 package com.lq.daoyun.service.impl;
 
-import com.lq.daoyun.Entity.DicData;
+import com.lq.daoyun.entity.DicData;
 import com.lq.daoyun.mapper.DicDataMapper;
 import com.lq.daoyun.service.IDicDataService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;

@@ -1,8 +1,7 @@
-package com.lq.daoyun.Entity;
+package com.lq.daoyun.entity;
 
 import java.io.Serializable;
 import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
@@ -18,18 +17,14 @@ import lombok.experimental.Accessors;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@ApiModel(value="DicData对象", description="")
-public class DicData implements Serializable {
+@ApiModel(value="RoleTab对象", description="")
+public class RoleTab implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private String dicType;
+    private String name;
 
-    private String dicKey;
-
-    private String dicValue;
-
-    private Integer defaultvalue;
+    private Integer menuId;
 
 
 }

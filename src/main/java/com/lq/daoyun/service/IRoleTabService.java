@@ -1,6 +1,6 @@
 package com.lq.daoyun.service;
 
-import com.lq.daoyun.Entity.RoleTab;
+import com.lq.daoyun.entity.RoleTab;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
