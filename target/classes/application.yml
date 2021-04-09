@@ -1,0 +1,29 @@
+
+# DataSource Config
+server:
+  port: 8081
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/daoyun_db?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
+    username: root
+    password: 123456
+
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**Mapper.xml
+
+jwt:
+  # JWT�洢������ͷ
+  tokenHeader: Authorization
+  # JWT �ӽ���ʹ�õ���Կ
+  secret: yeb-secret
+  # JWT�ĳ�����ʱ�䣨60*60*24��
+  expiration: 604800
+  # JWT �������õ���ͷ
+  tokenHead: Bearer
+
+  ## Mybatis SQL ��ӡ(�����ӿ����ڵİ�������Mapper.xml���ڵİ�)
+#logging:
+#    level:
+#    com.lq.daoyun.mapper: debug

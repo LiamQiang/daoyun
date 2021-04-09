@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lq.daoyun.mapper.SignInMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lq.daoyun.pojo.SignIn">
+        <id column="userid" property="userid" />
+        <result column="sign_in_type" property="signInType" />
+        <result column="enddate" property="enddate" />
+        <result column="publisher" property="publisher" />
+        <result column="classid" property="classid" />
+        <result column="startdate" property="startdate" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        userid, sign_in_type, enddate, publisher, classid, startdate
+    </sql>
+
+</mapper>
