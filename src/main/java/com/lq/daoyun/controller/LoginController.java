@@ -18,7 +18,7 @@ import java.security.Principal;
 /**
  * 登录
  */
-@Api(tags = "LoginController")
+@Api(tags = "登录相关接口")
 @RestController
 public class LoginController {
 
@@ -28,8 +28,8 @@ public class LoginController {
         this.adminService = adminService;
     }
 
-    @ApiOperation(value = "成功登录之后，返回token")
-    @PostMapping("/login")
+    @ApiOperation(value = "管理员成功登录之后，返回token")
+    @PostMapping("/adminlogin")
     public RespBean login(@RequestBody AdminLoginParam adminLoginParam, HttpServletRequest request){
         return adminService.login(adminLoginParam.getUsername(), adminLoginParam.getPassword(), request);
     }
@@ -50,6 +50,14 @@ public class LoginController {
     @PostMapping("/logout")
     public RespBean logout(){
         return RespBean.success("注销成功！");
+    }
+
+    @ApiOperation(value = "用户注册")
+    @PostMapping("/register")
+    public RespBean registerUser(@RequestBody String username, String password){
+
+        return RespBean.success("注册成功");
+
     }
 
 }

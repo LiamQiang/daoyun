@@ -1,9 +1,16 @@
 package com.lq.daoyun.controller;
 
 
-import org.springframework.web.bind.annotation.RequestMapping;
+import com.lq.daoyun.pojo.DicData;
+import com.lq.daoyun.pojo.RespBean;
+import com.lq.daoyun.pojo.SysParam;
+import com.lq.daoyun.service.IDicDataService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
-import org.springframework.web.bind.annotation.RestController;
+import java.util.List;
 
 /**
  * <p>
@@ -13,8 +20,12 @@ import org.springframework.web.bind.annotation.RestController;
  * @author LiamQ
  * @since 2021-04-08
  */
+
 @RestController
 @RequestMapping("/dic-type")
 public class DicTypeController {
+
+
+
 
 }

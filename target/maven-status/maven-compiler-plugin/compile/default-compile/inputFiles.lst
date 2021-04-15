@@ -12,6 +12,7 @@ E:\EngineTraining\daoyun\src\main\java\com\lq\daoyun\service\ITaskMemoryService.
 E:\EngineTraining\daoyun\src\main\java\com\lq\daoyun\controller\ClassTabController.java
 E:\EngineTraining\daoyun\src\main\java\com\lq\daoyun\service\ITaskService.java
 E:\EngineTraining\daoyun\src\main\java\com\lq\daoyun\controller\RoleTabController.java
+E:\EngineTraining\daoyun\src\main\java\com\lq\daoyun\controller\SysParamController.java
 E:\EngineTraining\daoyun\src\main\java\com\lq\daoyun\service\IUserTabService.java
 E:\EngineTraining\daoyun\src\main\java\com\lq\daoyun\service\impl\UserTabServiceImpl.java
 E:\EngineTraining\daoyun\src\main\java\com\lq\daoyun\pojo\AdminLoginParam.java
@@ -20,6 +21,7 @@ E:\EngineTraining\daoyun\src\main\java\com\lq\daoyun\config\security\RestAuthori
 E:\EngineTraining\daoyun\src\main\java\com\lq\daoyun\controller\DicDataController.java
 E:\EngineTraining\daoyun\src\main\java\com\lq\daoyun\controller\SignInMemoryController.java
 E:\EngineTraining\daoyun\src\main\java\com\lq\daoyun\service\ISignInService.java
+E:\EngineTraining\daoyun\src\main\java\com\lq\daoyun\mapper\SysParamMapper.java
 E:\EngineTraining\daoyun\src\main\java\com\lq\daoyun\pojo\SignInMemory.java
 E:\EngineTraining\daoyun\src\main\java\com\lq\daoyun\pojo\Task.java
 E:\EngineTraining\daoyun\src\main\java\com\lq\daoyun\service\impl\ClassTabServiceImpl.java
@@ -40,6 +42,7 @@ E:\EngineTraining\daoyun\src\main\java\com\lq\daoyun\mapper\ClassTabMapper.java
 E:\EngineTraining\daoyun\src\main\java\com\lq\daoyun\config\security\SecurityConfig.java
 E:\EngineTraining\daoyun\src\main\java\com\lq\daoyun\mapper\AdminMapper.java
 E:\EngineTraining\daoyun\src\main\java\com\lq\daoyun\pojo\CheckTab.java
+E:\EngineTraining\daoyun\src\main\java\com\lq\daoyun\pojo\SysParam.java
 E:\EngineTraining\daoyun\src\main\java\com\lq\daoyun\pojo\ClassTab.java
 E:\EngineTraining\daoyun\src\main\java\com\lq\daoyun\controller\HelloController.java
 E:\EngineTraining\daoyun\src\main\java\com\lq\daoyun\pojo\SignIn.java
@@ -51,6 +54,7 @@ E:\EngineTraining\daoyun\src\main\java\com\lq\daoyun\mapper\DicTypeMapper.java
 E:\EngineTraining\daoyun\src\main\java\com\lq\daoyun\DaoyunApplication.java
 E:\EngineTraining\daoyun\src\main\java\com\lq\daoyun\config\security\JwtAuthencationTokenFilter.java
 E:\EngineTraining\daoyun\src\main\java\com\lq\daoyun\controller\TaskMemoryController.java
+E:\EngineTraining\daoyun\src\main\java\com\lq\daoyun\service\impl\SysParamServiceImpl.java
 E:\EngineTraining\daoyun\src\main\java\com\lq\daoyun\service\impl\AdminServiceImpl.java
 E:\EngineTraining\daoyun\src\main\java\com\lq\daoyun\service\IDicTypeService.java
 E:\EngineTraining\daoyun\src\main\java\com\lq\daoyun\service\ICheckTabService.java
@@ -65,6 +69,7 @@ E:\EngineTraining\daoyun\src\main\java\com\lq\daoyun\service\impl\SignInMemorySe
 E:\EngineTraining\daoyun\src\main\java\com\lq\daoyun\service\impl\SignInServiceImpl.java
 E:\EngineTraining\daoyun\src\main\java\com\lq\daoyun\service\impl\TaskMemoryServiceImpl.java
 E:\EngineTraining\daoyun\src\main\java\com\lq\daoyun\controller\ExpController.java
+E:\EngineTraining\daoyun\src\main\java\com\lq\daoyun\service\ISysParamService.java
 E:\EngineTraining\daoyun\src\main\java\com\lq\daoyun\CodeGenerator.java
 E:\EngineTraining\daoyun\src\main\java\com\lq\daoyun\pojo\Admin.java
 E:\EngineTraining\daoyun\src\main\java\com\lq\daoyun\controller\AdminController.java
