@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletRequest;
 public interface IAdminService extends IService<Admin> {
 
     /**
-     * 登录之后返回token
+     * 管理员，登录之后返回token
      * @param username
      * @param password
      * @param request
@@ -32,4 +32,5 @@ public interface IAdminService extends IService<Admin> {
      * @return
      */
     Admin getAdminByUserName(String username);
+
 }

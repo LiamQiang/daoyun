@@ -1,6 +1,7 @@
 package com.lq.daoyun.config.security;
 
 
+import com.lq.daoyun.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -29,6 +30,8 @@ public class JwtAuthencationTokenFilter extends OncePerRequestFilter {
     private JwtTokenUtil jwtTokenUtil;
     @Autowired
     private UserDetailsService userDetailsService;
+    @Autowired
+    private IUserService userService;
 
     @Override
     protected void doFilterInternal(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, FilterChain filterChain) throws ServletException, IOException {
@@ -37,10 +40,14 @@ public class JwtAuthencationTokenFilter extends OncePerRequestFilter {
         if (null != authHeader && authHeader.startsWith(tokenHead)){
             String authToken = authHeader.substring((tokenHead.length()));
             String username = jwtTokenUtil.getUserNameFormToken(authToken);
-            // token存在，用户名但未登录
+            // token存在，用户名但未登录( 在 springSecurity 上下文拿不到 用户对象 ）
             if (null != username && null == SecurityContextHolder.getContext().getAuthentication()){
                 // 登录
-                UserDetails userDetails = userDetailsService.loadUserByUsername(username);
+                // UserDetails userDetails = userDetailsService.loadUserByUsername(username);
+                UserDetails userDetails = userService.getByPhonenumber(username);
+                if (userDetails == null){
+                    userDetails = userDetailsService.loadUserByUsername(username);
+                }
                 // 验证token是否有效，重新设置用户对象
                 if (jwtTokenUtil.validateToken(authToken, userDetails)){
                     UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());

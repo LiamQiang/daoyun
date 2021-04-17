@@ -5,8 +5,10 @@ import com.lq.daoyun.config.security.JwtTokenUtil;
 import com.lq.daoyun.pojo.Admin;
 import com.lq.daoyun.mapper.AdminMapper;
 import com.lq.daoyun.pojo.RespBean;
+import com.lq.daoyun.pojo.User;
 import com.lq.daoyun.service.IAdminService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.lq.daoyun.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
@@ -55,7 +57,7 @@ public class AdminServiceImpl extends ServiceImpl<AdminMapper, Admin> implements
         // 登录
         UserDetails userDetails = userDetailsService.loadUserByUsername(username);
         if (null == userDetails || !passwordEncoder.matches(password, userDetails.getPassword())){
-            return  RespBean.error("用户名或者密码不正确!");
+            return  RespBean.error("用户名或密码不正确!");
         }
         if (!userDetails.isEnabled()){
             return RespBean.error("账号被禁用！");
@@ -85,4 +87,6 @@ public class AdminServiceImpl extends ServiceImpl<AdminMapper, Admin> implements
         }
         return  admin;
     }
+
+
 }

@@ -14,7 +14,7 @@ import java.util.Map;
  **/
 
 @RestController
-@Api(tags = "HelloController")
+@Api(tags = "测试用接口")
 public class HelloController {
 
     @GetMapping("/hello")

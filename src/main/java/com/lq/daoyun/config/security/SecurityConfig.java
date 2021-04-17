@@ -46,7 +46,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         web.ignoring().antMatchers(
                 "/websocket/**",
                 "/**.html",
-                "/login/**",
+                "/admin/login/**",
                 "/logout/**",
                 "/css/**",
                 "favicon.ico",
@@ -55,8 +55,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 "/swagger-resources/**",
                 "/v2/api-docs/**",
                 "/captcha",
-                "/hello/**"
-
+                "/hello/**",
+                "/users/register/**",
+                "/sms/**",
+                "/teacher/login/**",
+                "/student/login/**"
         );
     }
 

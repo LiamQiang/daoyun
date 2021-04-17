@@ -5,7 +5,6 @@ import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.lq.daoyun.pojo.DicData;
 import com.lq.daoyun.mapper.DicDataMapper;
 import com.lq.daoyun.pojo.RespBean;
-import com.lq.daoyun.pojo.SysParam;
 import com.lq.daoyun.service.IDicDataService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
