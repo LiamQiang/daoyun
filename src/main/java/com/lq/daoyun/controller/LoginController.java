@@ -8,10 +8,7 @@ import com.lq.daoyun.service.IUserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.security.Principal;
@@ -56,5 +53,11 @@ public class LoginController {
         return RespBean.success("注销成功！");
     }
 
+
+    @ApiOperation(value = "[移动端]手机登录,成功登录之后，返回token")
+    @PostMapping("/phone/login")
+    public RespBean loginByPhone(@RequestParam String phonenumber, @RequestParam String smsCode){
+        return userService.loginByPhone(phonenumber, smsCode);
+    }
 
 }

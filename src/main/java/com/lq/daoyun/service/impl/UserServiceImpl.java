@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.lq.daoyun.config.security.JwtTokenUtil;
+import com.lq.daoyun.controller.SmsController;
 import com.lq.daoyun.pojo.RegisterParam;
 import com.lq.daoyun.pojo.RespBean;
 import com.lq.daoyun.pojo.User;
@@ -57,7 +58,9 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
         if (registerParam.getPhonenumber() == null || registerParam.getPhonenumber() == "" || registerParam.getPassword() == null || registerParam.getPassword() == ""){
             return RespBean.error("注册失败！用户名或密码不能为空!");
         }
-        else {
+        if (getByPhonenumber(registerParam.getPhonenumber()) != null){
+            return RespBean.error("注册失败！用户名已经存在！");
+        } else {
             User user = new User();
             // user.setNumber(null);
             user.setPassword(new BCryptPasswordEncoder().encode(registerParam.getPassword()));
@@ -68,7 +71,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
             user.setSex(0);
             user.setSchool("福州大学");
             user.setDepartment("数计院");
-            // user.setMaster(null);
+            user.setMaster("电子信息");
             user.setPhonenumber(registerParam.getPhonenumber());
             // role = 0 为学生
             user.setRole(registerParam.getRole());
@@ -167,5 +170,31 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
         return RespBean.success("登录成功！", tokenMap);
     }
 
+    /**
+     * 根据手机号验证登录
+     * @param phonenumber
+     * @param smsCode
+     * @return
+     */
+    @Override
+    public RespBean loginByPhone(String phonenumber, String smsCode) {
+        User user = getByPhonenumber(phonenumber);
+        if (null == user) {
+            return RespBean.error("用户不存在!");
+        }
+        // 短信验证成功code=200，失败code=500
+        RespBean respBean = SmsController.verifySmsCode(phonenumber, smsCode);
+        if (respBean.getCode() == 200) {
+            UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(user, null, user.getAuthorities());
+            SecurityContextHolder.getContext().setAuthentication(authenticationToken);
+            String token = jwtTokenUtil.generateToken(user);
+            Map<String, String> tokenMap = new HashMap<>();
+            tokenMap.put("token", token);
+            tokenMap.put("tokenHead", tokenHead);
+            return RespBean.success("登录成功！", tokenMap);
+        }else {
+            return RespBean.error("验证码不正确！");
+        }
 
+    }
 }

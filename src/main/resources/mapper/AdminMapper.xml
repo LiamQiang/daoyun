@@ -6,14 +6,14 @@
     <resultMap id="BaseResultMap" type="com.lq.daoyun.pojo.Admin">
     <result column="id" property="id" />
         <result column="name" property="name" />
-        <result column="username" property="username" />
+        <result column="account" property="account" />
         <result column="password" property="password" />
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
         id,
-        name, username, password
+        name, account, password
     </sql>
 
 </mapper>

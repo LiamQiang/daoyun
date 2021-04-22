@@ -9,7 +9,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * </p>
  *
  * @author LiamQ
- * @since 2021-04-08
+ * @since 2021-04-22
  */
 public interface SignInMapper extends BaseMapper<SignIn> {
 

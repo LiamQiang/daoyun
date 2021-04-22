@@ -66,7 +66,7 @@ public class SmsController {
      */
     @ApiOperation(value = "验证短信验证码")
     @GetMapping("/{phonenumber}/{smsCode}")
-    public RespBean verifySmsCode(@PathVariable("phonenumber") String phonenumber, @PathVariable("smsCode") String smsCode){
+    public static RespBean verifySmsCode(@PathVariable("phonenumber") String phonenumber, @PathVariable("smsCode") String smsCode){
         RestTemplate restTemplate = new RestTemplate();
         // 设置请求头
         HttpHeaders httpHeaders = new HttpHeaders();

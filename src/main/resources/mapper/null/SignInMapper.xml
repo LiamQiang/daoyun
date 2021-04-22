@@ -4,17 +4,19 @@
 
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="com.lq.daoyun.pojo.SignIn">
-        <id column="userid" property="userid" />
-        <result column="sign_in_type" property="signInType" />
-        <result column="enddate" property="enddate" />
-        <result column="publisher" property="publisher" />
-        <result column="classid" property="classid" />
-        <result column="startdate" property="startdate" />
+    <result column="id" property="id" />
+        <result column="course_id" property="courseId" />
+        <result column="type" property="type" />
+        <result column="start_time" property="startTime" />
+        <result column="time_limit" property="timeLimit" />
+        <result column="longitude" property="longitude" />
+        <result column="latitude" property="latitude" />
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        userid, sign_in_type, enddate, publisher, classid, startdate
+        id,
+        course_id, type, start_time, time_limit, longitude, latitude
     </sql>
 
 </mapper>

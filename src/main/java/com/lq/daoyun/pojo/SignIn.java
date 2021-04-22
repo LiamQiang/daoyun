@@ -14,7 +14,7 @@ import lombok.experimental.Accessors;
  * </p>
  *
  * @author LiamQ
- * @since 2021-04-08
+ * @since 2021-04-22
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -24,17 +24,20 @@ public class SignIn implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private Integer userid;
+    private Integer courseId;
 
-    private Integer signInType;
+    @ApiModelProperty(value = "签到类型，一键签到：0,显示签到1")
+    private Integer type;
 
-    private LocalDateTime enddate;
+    private LocalDateTime startTime;
 
-    private String publisher;
+    private LocalDateTime timeLimit;
 
-    private Integer classid;
+    @ApiModelProperty(value = "签到发起经度")
+    private Float longitude;
 
-    private LocalDateTime startdate;
+    @ApiModelProperty(value = "签到发起维度")
+    private Float latitude;
 
 
 }

@@ -54,4 +54,12 @@ public interface IUserService extends IService<User> {
      * @return
      */
     RespBean studentLogin(String username, String password, HttpServletRequest request);
+
+    /**
+     * 根据手机号登录
+     * @param phonenumber
+     * @param smsCode
+     * @return
+     */
+    RespBean loginByPhone(String phonenumber, String smsCode);
 }
