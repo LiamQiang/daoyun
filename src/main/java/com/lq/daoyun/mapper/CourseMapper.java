@@ -3,6 +3,8 @@ package com.lq.daoyun.mapper;
 import com.lq.daoyun.pojo.Course;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
+import java.util.List;
+
 /**
  * <p>
  *  Mapper 接口
@@ -13,4 +15,10 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  */
 public interface CourseMapper extends BaseMapper<Course> {
 
+    /**
+     * 根据教师ID查询课程
+     * @param teacherid
+     * @return
+     */
+    List<Course> getCourseListByTeacherID(Integer teacherid);
 }

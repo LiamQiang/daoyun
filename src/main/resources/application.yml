@@ -14,16 +14,25 @@ mybatis-plus:
   mapper-locations: classpath*:/mapper/**Mapper.xml
 
 jwt:
-  # JWT´æ´¢µÄÇëÇóÍ·
+  # JWTï¿½æ´¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í·
   tokenHeader: Authorization
-  # JWT ¼Ó½âÃÜÊ¹ÓÃµÄÃÜÔ¿
+  # JWT ï¿½Ó½ï¿½ï¿½ï¿½Ê¹ï¿½Ãµï¿½ï¿½ï¿½Ô¿
   secret: yeb-secret
-  # JWTµÄ³¬ÆÚÏÞÊ±¼ä£¨60*60*24£©
+  # JWTï¿½Ä³ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ä£¨60*60*24ï¿½ï¿½
   expiration: 604800
-  # JWT ¸ºÔØÖÐÄÃµ½¿ªÍ·
+  # JWT ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ãµï¿½ï¿½ï¿½Í·
   tokenHead: Bearer
 
-  ## Mybatis SQL ´òÓ¡(·½·¨½Ó¿ÚËùÔÚµÄ°ü£¬²»ÊÇMapper.xmlËùÔÚµÄ°ü)
+  ## Mybatis SQL ï¿½ï¿½Ó¡(ï¿½ï¿½ï¿½ï¿½ï¿½Ó¿ï¿½ï¿½ï¿½ï¿½ÚµÄ°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Mapper.xmlï¿½ï¿½ï¿½ÚµÄ°ï¿½)
 #logging:
-#    level:
-#    com.lq.daoyun.mapper: debug
+#    level: debug
+##    com.lq.daoyun.mapper: debug
+
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+# GitHubç¬¬ä¸‰æ–¹ç™»å½•
+oauth:
+  github:
+    app-id: ba9bf9792ff5403656ac
+    app-secret: b9c8c3bab399449fcf850344ad37d00bded8461

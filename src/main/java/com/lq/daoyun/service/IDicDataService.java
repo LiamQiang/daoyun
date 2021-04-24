@@ -21,7 +21,7 @@ public interface IDicDataService extends IService<DicData> {
      * 获取所有数据字典
      * @return
      */
-    List<DicData> getAllDicData();
+    RespBean getAllDicData();
 
     /**
      * 添加一个数据字典

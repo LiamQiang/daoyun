@@ -29,17 +29,17 @@ public class SysParamController {
 
     @ApiOperation(value = "获取所有系统参数")
     @GetMapping()
-    public List<SysParam> getAllSysParams(){
+    public RespBean getAllSysParams(){
         return iSysParamService.getAllSysParams();
     }
 
-    @ApiOperation(value = "添加一个系统参数")
+    @ApiOperation(value = "添加一个系统参数",notes = "不需要传入id或者id设置为0，数据库会自动生成主键id")
     @PostMapping()
     public RespBean addSysParam(@RequestBody SysParam sysParam){
         return iSysParamService.addSysParam(sysParam);
     }
 
-    @ApiOperation(value = "修改一个系统参数")
+    @ApiOperation(value = "修改一个系统参数", notes = "需要传入正确的id以完成数据库的修改")
     @PutMapping()
     public RespBean updateSysParam(@RequestBody SysParam sysParam){
         if (iSysParamService.updateById(sysParam)){
@@ -48,7 +48,7 @@ public class SysParamController {
         return RespBean.error("更新失败！");
     }
 
-    @ApiOperation(value = "删除系统参数")
+    @ApiOperation(value = "删除系统参数", notes = "传入正确的id以完成数据库的删除")
     @DeleteMapping("/{id}")
     public RespBean deleteEmp(@PathVariable Integer id) {
         if (iSysParamService.removeById(id)) {

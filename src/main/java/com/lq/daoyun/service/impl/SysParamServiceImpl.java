@@ -31,9 +31,14 @@ public class SysParamServiceImpl extends ServiceImpl<SysParamMapper, SysParam> i
      * @return
      */
     @Override
-    public List<SysParam> getAllSysParams() {
-        List<SysParam> sysParams = sysParamMapper.selectList(null);
-        return sysParams;
+    public RespBean getAllSysParams() {
+        try{
+            List<SysParam> sysParamList = sysParamMapper.selectList(null);
+            return RespBean.success("查询成功！", sysParamList);
+        }catch(Exception e){
+            return RespBean.success("查询失败！"+ e);
+        }
+
     }
 
 

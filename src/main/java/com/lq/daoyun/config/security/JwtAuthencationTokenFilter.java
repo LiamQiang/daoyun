@@ -44,7 +44,7 @@ public class JwtAuthencationTokenFilter extends OncePerRequestFilter {
             if (null != username && null == SecurityContextHolder.getContext().getAuthentication()){
                 // 登录
                 // UserDetails userDetails = userDetailsService.loadUserByUsername(username);
-                UserDetails userDetails = userService.getByPhonenumber(username);
+                UserDetails userDetails = (UserDetails) userService.getByPhonenumber(username).getObject();
                 if (userDetails == null){
                     userDetails = userDetailsService.loadUserByUsername(username);
                 }

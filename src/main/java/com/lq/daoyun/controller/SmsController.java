@@ -64,9 +64,9 @@ public class SmsController {
     /**
      * 发送短信，成功时body中的"smsId": smsId（可用于后面使用查询短信状态接口来查询该条短信是否发送成功）
      */
-    @ApiOperation(value = "验证短信验证码")
+    @ApiOperation(value = "验证短信验证码", notes = "调用接口时记得去掉url中的{}符号")
     @GetMapping("/{phonenumber}/{smsCode}")
-    public static RespBean verifySmsCode(@PathVariable("phonenumber") String phonenumber, @PathVariable("smsCode") String smsCode){
+    public static RespBean verifySmsCode(@PathVariable String phonenumber, @PathVariable String smsCode){
         RestTemplate restTemplate = new RestTemplate();
         // 设置请求头
         HttpHeaders httpHeaders = new HttpHeaders();

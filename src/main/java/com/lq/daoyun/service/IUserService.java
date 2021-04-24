@@ -1,10 +1,11 @@
 package com.lq.daoyun.service;
 
-import com.lq.daoyun.pojo.RegisterParam;
+import com.lq.daoyun.DTO.PhoneLoginParamDTO;
+import com.lq.daoyun.DTO.QuickRegisterParamsDTO;
+import com.lq.daoyun.DTO.RegisterParamDTO;
 import com.lq.daoyun.pojo.RespBean;
 import com.lq.daoyun.pojo.User;
 import com.baomidou.mybatisplus.extension.service.IService;
-import org.springframework.security.core.userdetails.UserDetailsService;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -20,17 +21,17 @@ public interface IUserService extends IService<User> {
 
     /**
      * 添加一个用户完成注册
-     * @param registerParam
+     * @param registerParamDTO
      * @return
      */
-    RespBean addUser(RegisterParam registerParam);
+    RespBean addUser(RegisterParamDTO registerParamDTO);
 
     /**
      * 根据手机号获取用户
      * @param phonenumber
      * @return
      */
-    User getByPhonenumber(String phonenumber);
+    RespBean getByPhonenumber(String phonenumber);
 
     /**
      * 教师用户登录，成功返回token
@@ -45,7 +46,7 @@ public interface IUserService extends IService<User> {
      * 根据token获取用户信息
      * @param request
      */
-    User getUserInfoByToken(HttpServletRequest request);
+    RespBean getUserInfoByToken(HttpServletRequest request);
     /**
      * 学生用户登录，成功返回token
      * @param username
@@ -61,5 +62,19 @@ public interface IUserService extends IService<User> {
      * @param smsCode
      * @return
      */
-    RespBean loginByPhone(String phonenumber, String smsCode);
+    RespBean loginByPhone(PhoneLoginParamDTO phoneLoginParamDTO);
+
+    /**
+     * 快速注册，只需要填写手机号密码和角色信息
+     * @param quickRegisterParamsDTO
+     * @return
+     */
+    RespBean quickRegisterAddUser(QuickRegisterParamsDTO quickRegisterParamsDTO);
+
+    /**
+     * 快速注册后通过手机号快速登录
+     * @param phonenumber
+     * @return
+     */
+    RespBean quickLogin(String phonenumber);
 }

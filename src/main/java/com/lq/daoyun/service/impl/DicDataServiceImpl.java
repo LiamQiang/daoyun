@@ -33,9 +33,12 @@ public class DicDataServiceImpl extends ServiceImpl<DicDataMapper, DicData> impl
      * @return
      */
     @Override
-    public List<DicData> getAllDicData() {
-        List<DicData> listDicData= dicDataMapper.selectList(null);
-        return listDicData;
+    public RespBean getAllDicData() {
+        try{List<DicData> listDicData= dicDataMapper.selectList(null);
+            return RespBean.success("查询成功！",listDicData);
+        }catch (Exception e){
+            return RespBean.error("查询失败！"+ e);
+        }
     }
 
     /**

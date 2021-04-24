@@ -31,17 +31,17 @@ public class DicDataController {
 
     @ApiOperation(value = "获取所有数据字典")
     @GetMapping()
-    public List<DicData> getAllDicData(){
+    public RespBean getAllDicData(){
         return iDicDataService.getAllDicData();
     }
 
-    @ApiOperation(value = "添加一个数据字典", notes = "id不需要传")
+    @ApiOperation(value = "添加一个数据字典", notes = "不需要传入id或者id设置为0，数据库会自动生成主键id")
     @PostMapping()
     public RespBean addDicData(@RequestBody DicData dicData ){
         return iDicDataService.addDicData(dicData);
     }
 
-    @ApiOperation(value = "修改一个数据字典")
+    @ApiOperation(value = "修改一个数据字典",notes = "需要传入正确的id以完成数据库的修改")
     @PutMapping()
     public RespBean updateDicData(@RequestBody DicData dicData){
         if (iDicDataService.updateById(dicData)){
@@ -50,7 +50,7 @@ public class DicDataController {
         return RespBean.error("更新失败！");
     }
 
-    @ApiOperation(value = "删除数据字典")
+    @ApiOperation(value = "删除数据字典",notes = "需要传入正确的id以完成数据库的修改")
     @DeleteMapping("/{id}")
     public RespBean deleteDicData(@PathVariable Integer id) {
         if (iDicDataService.removeById(id)) {

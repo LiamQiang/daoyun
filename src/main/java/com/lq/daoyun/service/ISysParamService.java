@@ -20,7 +20,7 @@ public interface ISysParamService extends IService<SysParam> {
      * 获取所有系统参数
      * @return
      */
-    List<SysParam> getAllSysParams();
+    RespBean getAllSysParams();
 
 
     /**

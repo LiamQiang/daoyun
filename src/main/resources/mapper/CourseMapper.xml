@@ -17,4 +17,17 @@
         name, description, credit, semester
     </sql>
 
+    <select id="getCourseListByTeacherID" resultMap="BaseResultMap">
+        SELECT
+            course.*
+        FROM
+            course
+                LEFT JOIN
+            teacher_course
+            ON
+                (course.id = teacher_course.course_id)
+        WHERE
+            teacher_course.teacher_id = #{teacherid}
+    </select>
+
 </mapper>

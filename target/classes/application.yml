@@ -25,5 +25,14 @@ jwt:
 
   ## Mybatis SQL ��ӡ(�����ӿ����ڵİ�������Mapper.xml���ڵİ�)
 #logging:
-#    level:
-#    com.lq.daoyun.mapper: debug
+#    level: debug
+##    com.lq.daoyun.mapper: debug
+
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+# GitHub第三方登录
+oauth:
+  github:
+    app-id: ba9bf9792ff5403656ac
+    app-secret: b9c8c3bab399449fcf850344ad37d00bded8461
