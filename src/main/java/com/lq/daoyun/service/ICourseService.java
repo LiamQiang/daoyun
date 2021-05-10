@@ -46,4 +46,6 @@ public interface ICourseService extends IService<Course> {
      * @return
      */
     RespBean updateCourseByTeacher(Course course, HttpServletRequest request);
+
+    RespBean getCourseById(Integer id);
 }

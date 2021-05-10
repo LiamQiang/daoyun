@@ -15,10 +15,7 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 @ApiModel(value = "快速注册实体类", description = "")
 public class QuickRegisterParamsDTO {
-    @ApiModelProperty(value = "用户角色(学生0/教师1)", required = true)
-    private Integer role;
     @ApiModelProperty(value = "用户名/手机号", required = true)
     private String phonenumber;
-    @ApiModelProperty(value = "密码", required = true)
-    private String password;
+
 }

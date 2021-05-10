@@ -61,7 +61,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 "/sms/**/**",
                 "/teacher/login/**",
                 "/student/login/**",
-                "/phone/login/**"
+                "/phone/login/**",
+                "/oauth/**",
+                "/github.com/**",
+                "https://github.com/**",
+                "/users/quick-register/**",
+                "/github/**"
         );
     }
 

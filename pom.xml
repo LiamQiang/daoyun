@@ -103,6 +103,19 @@
             <artifactId>fastjson</artifactId>
             <version>1.2.28</version>
         </dependency>
+        <!--引入OKHTTP，发送请求-->
+        <dependency>
+            <groupId>com.squareup.okhttp3</groupId>
+            <artifactId>okhttp</artifactId>
+            <version>3.6.0</version>
+        </dependency>
+
+        <!--引入fastjson-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.62</version>
+        </dependency>
     </dependencies>
 
     <build>

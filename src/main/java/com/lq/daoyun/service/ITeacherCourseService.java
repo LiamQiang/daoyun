@@ -22,4 +22,12 @@ public interface ITeacherCourseService extends IService<TeacherCourse> {
      * @return
      */
     RespBean getCourseListByTeacherID(HttpServletRequest request);
+
+    RespBean getCourseListByTeacherID(Integer id);
+
+    RespBean getAllTeacherCourse();
+
+    RespBean addTeacherCourse(TeacherCourse teacherCourse);
+
+    RespBean updateTTeacherCourseById(TeacherCourse teacherCourse);
 }

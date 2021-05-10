@@ -41,7 +41,7 @@ public class DicDataController {
         return iDicDataService.addDicData(dicData);
     }
 
-    @ApiOperation(value = "修改一个数据字典",notes = "需要传入正确的id以完成数据库的修改")
+    @ApiOperation(value = "根据ID修改一个数据字典",notes = "需要传入正确的id以完成数据库的修改")
     @PutMapping()
     public RespBean updateDicData(@RequestBody DicData dicData){
         if (iDicDataService.updateById(dicData)){
@@ -50,7 +50,7 @@ public class DicDataController {
         return RespBean.error("更新失败！");
     }
 
-    @ApiOperation(value = "删除数据字典",notes = "需要传入正确的id以完成数据库的修改")
+    @ApiOperation(value = "根据ID删除数据字典",notes = "需要传入正确的id以完成数据库的修改")
     @DeleteMapping("/{id}")
     public RespBean deleteDicData(@PathVariable Integer id) {
         if (iDicDataService.removeById(id)) {

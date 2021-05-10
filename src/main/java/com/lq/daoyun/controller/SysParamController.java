@@ -39,7 +39,7 @@ public class SysParamController {
         return iSysParamService.addSysParam(sysParam);
     }
 
-    @ApiOperation(value = "修改一个系统参数", notes = "需要传入正确的id以完成数据库的修改")
+    @ApiOperation(value = "根据ID修改一个系统参数", notes = "需要传入正确的id以完成数据库的修改")
     @PutMapping()
     public RespBean updateSysParam(@RequestBody SysParam sysParam){
         if (iSysParamService.updateById(sysParam)){
@@ -48,7 +48,7 @@ public class SysParamController {
         return RespBean.error("更新失败！");
     }
 
-    @ApiOperation(value = "删除系统参数", notes = "传入正确的id以完成数据库的删除")
+    @ApiOperation(value = "根据ID删除系统参数", notes = "传入正确的id以完成数据库的删除")
     @DeleteMapping("/{id}")
     public RespBean deleteEmp(@PathVariable Integer id) {
         if (iSysParamService.removeById(id)) {

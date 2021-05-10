@@ -12,6 +12,7 @@ import com.lq.daoyun.pojo.TeacherCourse;
 import com.lq.daoyun.pojo.User;
 import com.lq.daoyun.service.ICourseService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import io.swagger.models.auth.In;
 import org.apache.poi.ss.formula.functions.T;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.ParameterResolutionDelegate;
@@ -101,7 +102,7 @@ public class CourseServiceImpl extends ServiceImpl<CourseMapper, Course> impleme
         }
         try{
             // course表删除一行信息，由于外键设置了级联操作，删除会一并删除其他表的数据
-            courseMapper.deleteById(courseid);
+           courseMapper.deleteById(courseid);
 
         }catch (Exception e){
             return RespBean.error("删除失败！" + e);
@@ -131,6 +132,18 @@ public class CourseServiceImpl extends ServiceImpl<CourseMapper, Course> impleme
             return RespBean.error("更新失败！" + e);
         }
         return RespBean.success("更新成功！");
+    }
+
+    @Override
+    public RespBean getCourseById(Integer id) {
+        try{
+            // course表更新一行信息，由于外键设置了级联操作，更新会一并更新其他表的数据
+            Course course = courseMapper.selectById(id);
+            return RespBean.success("查询成功！", course);
+        }catch (Exception e){
+            return RespBean.error("查询失败！" + e);
+        }
+
     }
 
 

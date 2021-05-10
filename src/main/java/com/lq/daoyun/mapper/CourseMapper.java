@@ -21,4 +21,12 @@ public interface CourseMapper extends BaseMapper<Course> {
      * @return
      */
     List<Course> getCourseListByTeacherID(Integer teacherid);
+
+    /**
+     * 根据学生ID查询课程
+     * @param teacherid
+     * @return
+     */
+    List<Course> getCourseListByStudentID(Integer studentid);
+
 }

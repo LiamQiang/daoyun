@@ -1,5 +1,6 @@
 package com.lq.daoyun.service;
 
+import com.lq.daoyun.DTO.AddUserDTO;
 import com.lq.daoyun.DTO.PhoneLoginParamDTO;
 import com.lq.daoyun.DTO.QuickRegisterParamsDTO;
 import com.lq.daoyun.DTO.RegisterParamDTO;
@@ -32,6 +33,12 @@ public interface IUserService extends IService<User> {
      * @return
      */
     RespBean getByPhonenumber(String phonenumber);
+    /**
+     * 根据用户号获取用户
+     * @param username
+     * @return
+     */
+    RespBean getByUsername(String username);
 
     /**
      * 教师用户登录，成功返回token
@@ -77,4 +84,19 @@ public interface IUserService extends IService<User> {
      * @return
      */
     RespBean quickLogin(String phonenumber);
+
+    /**
+     * 根据token更新用户信息
+     * @param user
+     * @param request
+     * @return
+     */
+    RespBean updateUser(User user, HttpServletRequest request);
+
+    /**
+     * 新增用户
+     * @param user
+     * @return
+     */
+    RespBean addNewUser(AddUserDTO addUserDTO);
 }

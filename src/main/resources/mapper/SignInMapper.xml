@@ -5,18 +5,37 @@
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="com.lq.daoyun.pojo.SignIn">
     <result column="id" property="id" />
-        <result column="course_id" property="courseId" />
-        <result column="type" property="type" />
+        <result column="teacher_course_id" property="teacherCourseId" />
+        <result column="sign_in_type" property="signInType" />
         <result column="start_time" property="startTime" />
         <result column="time_limit" property="timeLimit" />
         <result column="longitude" property="longitude" />
         <result column="latitude" property="latitude" />
+        <result column="activity" property="activity" />
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
         id,
-        course_id, type, start_time, time_limit, longitude, latitude
+        teacher_course_id, sign_in_type, start_time, time_limit, longitude, latitude, activity
     </sql>
+
+    <select id="getSignInListByTeacherID" resultMap="BaseResultMap">
+        SELECT
+            sign_in.*, `user`.id as teacher_id, teacher_course.course_id as course_id, `user`.nickname as teacher_name
+        FROM
+            sign_in
+                LEFT JOIN
+            teacher_course
+            ON
+                (sign_in.teacher_course_id = teacher_course.id)
+                LEFT JOIN
+            `user`
+            ON
+                (teacher_course.teacher_id = `user`.id)
+        where
+            `user`.id = #{teacherid}
+
+    </select>
 
 </mapper>

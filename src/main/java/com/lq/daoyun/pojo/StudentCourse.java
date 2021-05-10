@@ -1,6 +1,9 @@
 package com.lq.daoyun.pojo;
 
 import java.io.Serializable;
+
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -23,8 +26,14 @@ public class StudentCourse implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    @ApiModelProperty(value = "id")
+    @TableId(value = "id", type = IdType.AUTO)
+    private Integer id;
+
+    @ApiModelProperty(value = "课程id")
     private Integer courseId;
 
+    @ApiModelProperty(value = "学生id")
     private Integer studentId;
 
     @ApiModelProperty(value = "经验值")

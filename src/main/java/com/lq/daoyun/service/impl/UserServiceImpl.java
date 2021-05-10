@@ -2,12 +2,16 @@ package com.lq.daoyun.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
+import com.baomidou.mybatisplus.extension.api.R;
+import com.lq.daoyun.DTO.AddUserDTO;
 import com.lq.daoyun.DTO.PhoneLoginParamDTO;
 import com.lq.daoyun.DTO.QuickRegisterParamsDTO;
 import com.lq.daoyun.config.security.JwtTokenUtil;
 import com.lq.daoyun.controller.SmsController;
 import com.lq.daoyun.DTO.RegisterParamDTO;
 import com.lq.daoyun.pojo.RespBean;
+import com.lq.daoyun.pojo.SignIn;
+import com.lq.daoyun.pojo.TeacherCourse;
 import com.lq.daoyun.pojo.User;
 import com.lq.daoyun.mapper.UserMapper;
 import com.lq.daoyun.service.IUserService;
@@ -37,6 +41,8 @@ import java.util.Map;
 @Service
 public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IUserService{
 
+    @Autowired
+    private IUserService iUserService;
     @Autowired
     private UserMapper userMapper;
     @Autowired
@@ -104,6 +110,28 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
     }
 
     /**
+     * 根据用户号获取用户
+     * @param username
+     * @return
+     */
+    @Override
+    public RespBean getByUsername(String username) {
+        if (username == null || username == ""){
+            return null;
+        } else {
+            User user = new User();
+            QueryWrapper<User> userQueryWrapper = Wrappers.query();
+            user = userMapper.selectOne(userQueryWrapper.eq("username", username));
+            if (user != null){
+                return RespBean.success("查询成功", user);
+            } else {
+                return RespBean.error("用户不存在!");
+            }
+        }
+
+    }
+
+    /**
      * 教师用户登录，user.role = 1
      * @param username
      * @param password
@@ -140,7 +168,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
                return null;
             }
             User user = (User) getByPhonenumber(username).getObject();
-            return RespBean.success("查询信息成功！",user);
+            return RespBean.success("查询用户信息成功！",user);
         }
         return RespBean.error("查询失败!");
     }
@@ -195,22 +223,24 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
     }
 
     /**
-     * 快速注册，只需要填写手机号密码和角色信息
+     * 快速注册，只需要填写手机号
      * @param quickRegisterParamsDTO
      * @return
      */
     @Override
     public RespBean quickRegisterAddUser(QuickRegisterParamsDTO quickRegisterParamsDTO) {
-        if (quickRegisterParamsDTO.getPhonenumber() == null || quickRegisterParamsDTO.getPhonenumber() == "" || quickRegisterParamsDTO.getPassword() == null || quickRegisterParamsDTO.getPassword() == ""){
-            return RespBean.error("注册失败！用户名或密码不能为空!");
-        }
         if (getByPhonenumber(quickRegisterParamsDTO.getPhonenumber()).getObject() != null){
             return RespBean.error("注册失败！用户已经存在！");
         }else {
             User user = new User();
             user.setPhonenumber(quickRegisterParamsDTO.getPhonenumber());
-            user.setPassword(new BCryptPasswordEncoder().encode(quickRegisterParamsDTO.getPassword()));
-            user.setRole(quickRegisterParamsDTO.getRole());
+            user.setPassword(new BCryptPasswordEncoder().encode("123456"));
+            user.setUsername(quickRegisterParamsDTO.getPhonenumber());
+            user.setCreatedate(LocalDateTime.now());
+            user.setCreator(1);
+            user.setModifier(1);
+            user.setModifyDate(LocalDateTime.now());
+            user.setRole(0);
             try {
                 userMapper.insert(user);
                 Map<String, String> map = new HashMap<>();
@@ -241,6 +271,49 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
             tokenMap.put("token", token);
             tokenMap.put("tokenHead", tokenHead);
             return RespBean.success("登录成功！", tokenMap);
+        }
+    }
+
+    @Override
+    public RespBean updateUser(User user, HttpServletRequest request) {
+        // 根据token获取用户
+        User userGetByToken = (User) this.getUserInfoByToken(request).getObject();
+        user.setId(userGetByToken.getId());
+        try {
+            userMapper.updateById(user);
+            return RespBean.success("更新成功！","更新用户ID为" + user.getId() + "的信息");
+        }catch (Exception e){
+            return RespBean.error("更新失败！", e);
+        }
+
+    }
+
+    @Override
+    public RespBean addNewUser(AddUserDTO addUserDTO) {
+        RespBean respBean = iUserService.getByPhonenumber(addUserDTO.getPhonenumber());
+        if (respBean.getObject() != null ) return RespBean.error("插入数据失败！手机号为" + addUserDTO.getPhonenumber() + "的用户已经存在！");
+        User user = new User();
+        user.setPassword(new BCryptPasswordEncoder().encode(addUserDTO.getPassword()));
+        user.setUsername(addUserDTO.getPhonenumber());
+        // user.setImage(null);
+        user.setNickname(addUserDTO.getNickname());
+        // 默认为男
+        user.setSex(addUserDTO.getSex());
+        user.setSchool(addUserDTO.getSchool());
+        user.setDepartment(addUserDTO.getDepartment());
+        user.setMaster(addUserDTO.getMaster());
+        user.setPhonenumber(addUserDTO.getPhonenumber());
+        // role = 0 为学生
+        user.setRole(addUserDTO.getRole());
+        user.setCreatedate(LocalDateTime.now());
+        user.setCreator(1);
+        user.setModifier(1);
+        user.setModifyDate(LocalDateTime.now());
+        int insert = userMapper.insert(user);
+        if (insert > 0){
+            return RespBean.success("新增数据成功!", user);
+        }else {
+            return RespBean.error("新增数据失败！");
         }
     }
 }
