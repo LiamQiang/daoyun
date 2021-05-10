@@ -14,8 +14,8 @@ mobile分支：移动端开发分支
 + 第七周周报:解决调用接口时遇到的跨域问题
 + 第八周周报:实现短信登录以及账号密码登录
 + 第九周周报:实现基于RBAC的权限控制
-+ 第十周周报：实现按钮设置以及菜单设置
++ 第十周周报:实现按钮设置以及菜单设置
 
 
 + HTTP拦截器源文件：https://github.com/LiamQiang/daoyun/blob/frontend/%E7%AC%AC%E4%BA%94%E5%91%A8/axios.js
-+ 调用REST API的源文件:https://github.com/LiamQiang/daoyun/blob/frontend/%E7%AC%AC%E4%BA%94%E5%91%A8/userList.vue
++ 调用REST API的源文件: https://github.com/LiamQiang/daoyun/blob/frontend/%E7%AC%AC%E4%BA%94%E5%91%A8/userList.vue
