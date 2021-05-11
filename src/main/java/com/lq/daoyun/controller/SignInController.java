@@ -34,7 +34,7 @@ public class SignInController {
         return iSignInService.getSignInListByTeacherID(request);
     }
 
-    @ApiOperation(value = "根据教师ID查询教师开启的签到表，返回签到列表", notes = "需要传入教师ID")
+    @ApiOperation(value = "根据教师ID查询教师开启的签到表，返回签到表列表", notes = "需要传入教师ID")
     @GetMapping("/info/{id}")
     public RespBean getSignInListByTeacherID(@PathVariable Integer id){
         return iSignInService.getSignInListByTeacherID(id);
