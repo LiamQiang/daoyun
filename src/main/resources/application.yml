@@ -36,10 +36,10 @@ mybatis:
 # GitHub第三方登录
 oauth:
   github:
-#    app-id: 3176b7ac32b3b4d108dc
-    app-id: ba9bf9792ff5403656ac
-#    app-secret: 8b6a6226ea41439ecf89fdd0befacdc0c9338f24
-    app-secret: b9c8c3bab399449fcf850344ad37d00bded84612
+    app-id: 3176b7ac32b3b4d108dc
+#    app-id: ba9bf9792ff5403656ac
+    app-secret: 280b1ebc4c02abd6dd97cb0c55a77fe264b259ae
+#    app-secret: b9c8c3bab399449fcf850344ad37d00bded84612
 
 #github:
 #  client_id: 3176b7ac32b3b4d108dc

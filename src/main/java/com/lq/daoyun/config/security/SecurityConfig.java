@@ -66,7 +66,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 "/github.com/**",
                 "https://github.com/**",
                 "/users/quick-register/**",
-                "/github/**"
+                "/github/**",
+                "/third-party/**"
         );
     }
 

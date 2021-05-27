@@ -14,15 +14,40 @@
         <result column="activity" property="activity" />
     </resultMap>
 
+    <resultMap id="getSignInListByTeacherIDMap" type="java.util.HashMap">
+        <result column="id" property="id" />
+        <result column="teacher_course_id" property="teacherCourseId" />
+        <result column="sign_in_type" property="signInType" />
+        <result column="start_time" property="startTime" />
+        <result column="time_limit" property="timeLimit" />
+        <result column="longitude" property="longitude" />
+        <result column="latitude" property="latitude" />
+        <result column="activity" property="activity" />
+<!--        <association property="user" javaType="com.xxx.server.pojo.User">-->
+<!--            &lt;!&ndash; column="nid" 数据库表字段别名，property="name" 实体类属性名；&ndash;&gt;-->
+<!--            <id column="teacher_id" property="id"/>-->
+<!--            <result column="nickname" property="nickname"/>-->
+<!--        </association>-->
+<!--        <association property="course" javaType="com.xxx.server.pojo.Course">-->
+<!--            &lt;!&ndash; column="nid" 数据库表字段别名，property="name" 实体类属性名；&ndash;&gt;-->
+<!--            <id column="course_id" property="id"/>-->
+<!--            <result column="name" property="name"/>-->
+<!--        </association>-->
+        <result column="course_id" property="course_id"/>
+        <result column="teacher_name" property="teacher_name" />
+        <result column="course_name"  property="course_name" />
+    </resultMap>
+
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
         id,
         teacher_course_id, sign_in_type, start_time, time_limit, longitude, latitude, activity
     </sql>
 
-    <select id="getSignInListByTeacherID" resultMap="BaseResultMap">
-        SSELECT
-        sign_in.*, `user`.id as teacher_id, teacher_course.course_id as course_id, `user`.nickname as teacher_name, course.`name`
+
+    <select id="getSignInListByTeacherID" resultMap="getSignInListByTeacherIDMap">
+        SELECT
+        sign_in.*, `user`.id as teacher_id, teacher_course.course_id as course_id, `user`.nickname as teacher_name, course.`name` as course_name
         FROM
             sign_in
                 LEFT JOIN
@@ -39,8 +64,6 @@
 								(teacher_course.course_id = course.id)
         where
             `user`.id = #{teacherid}
-
-
     </select>
 
 </mapper>

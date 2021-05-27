@@ -91,18 +91,17 @@ public class OauthController {
         ThirdParty thirdPartyIsExist = iThirdPartyService.selectByThirdPartyID(thirdID);
         // 第三方表中没有第三方的ID，加入thirdparty表格中,直接到登录界面并弹窗让其绑定手机号,绑定完才返回用户token
         if (thirdPartyIsExist == null) {
-            RespBean thirdPartyrespBean = iThirdPartyService.addThirdPartyByID(thirdID);
-            ThirdParty thirdParty = (ThirdParty) thirdPartyrespBean.getObject();
-            if (thirdPartyrespBean.getCode() == 200) {
+            // RespBean thirdPartyrespBean = iThirdPartyService.addThirdPartyByID(thirdID);
+            // ThirdParty thirdParty = (ThirdParty) thirdPartyrespBean.getObject();
+           // if (thirdPartyrespBean.getCode() == 200) {
                 Map<String, String> map = new HashMap<>();
                 map.put("loginMode", "1");
                 map.put("thirdPartyId", thirdID.toString());
-                map.put("id", thirdParty.getId().toString());
                 // 前端根据loginMode == 1判断是否弹窗让用户绑定,没绑定的话不给token
                 return RespBean.success("第三方登录成功！", map);
-            } else {
-                return RespBean.success("第三方登录失败！");
-            }
+            //} else {
+              //  return RespBean.success("第三方登录失败！");
+           // }
             // 有第三方ID，则必定已经绑定了一个用户ID，通过用户ID获取用户从而提供token
         } else {
             // 根据第三方ID获取手机号
@@ -120,6 +119,8 @@ public class OauthController {
                 Map<String, String> tokenMap = new HashMap<>();
                 tokenMap.put("token", token);
                 tokenMap.put("tokenHead", tokenHead);
+                tokenMap.put("loginMode", "0");
+                tokenMap.put("thirdPartyId", thirdID.toString());
                 return RespBean.success("第三方登录成功！", tokenMap);
             }
         }
