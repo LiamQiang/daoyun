@@ -1,30 +1,23 @@
 package com;
 
 public class CommomList<T> {
-    int totalCount,totalPage;
-    T list;
+    int code;
+    String message;
+    T object;
 
-    public int getTotalCount() {
-        return totalCount;
+    public int getCode() {
+        return code;
     }
 
-    public void setTotalCount(int totalCount) {
-        this.totalCount = totalCount;
-    }
-
-    public int getTotalPage() {
-        return totalPage;
-    }
-
-    public void setTotalPage(int totalPage) {
-        this.totalPage = totalPage;
+    public void setCode(int code) {
+        this.code = code;
     }
 
     public T getList() {
-        return list;
+        return object;
     }
 
     public void setList(T list) {
-        this.list = list;
+        this.object = object;
     }
 }

@@ -1,29 +1,22 @@
 package com.activity;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
 import com.APIInterface;
 import com.CommomList;
-import com.CommonBaseAdapter;
-import com.CommonViewHolder;
-import com.DateUtils;
 import com.HttpUtils;
-import com.MyApplication;
-import com.bean.Item;
+import com.bean.object;
 import com.example.trade.R;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.loopj.android.http.JsonHttpResponseHandler;
 
 import org.apache.http.Header;
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.Date;
@@ -31,7 +24,7 @@ import java.util.List;
 
 public class CateActivity extends Activity {
     ListView listView;
-    CommomList<List<Item>> mcommomList;
+    CommomList<List<object>> mcommomList;
     private String cateId;
 
 
@@ -81,9 +74,9 @@ public class CateActivity extends Activity {
             super.onSuccess(statusCode, headers, response);
             //利用gson把json转成bean
             Gson gson=new Gson();
-            mcommomList = gson.fromJson(response.toString(), new TypeToken<CommomList<List<Item>>>() {}.getType());
+            mcommomList = gson.fromJson(response.toString(), new TypeToken<CommomList<List<object>>>() {}.getType());
             Date nowDate=new Date();
-            listView.setAdapter(new CommonBaseAdapter<Item>(CateActivity.this,mcommomList.getList(),R.layout.sub_home_list) {
+           /* listView.setAdapter(new CommonBaseAdapter<Item>(CateActivity.this,mcommomList.getList(),R.layout.sub_home_list) {
                 @Override
                 protected void convert(CommonViewHolder viewHolder, Item item) {
                     if (item.getCreated()!=null&&!item.getCreated().equals("")){
@@ -140,7 +133,7 @@ public class CateActivity extends Activity {
                         }
                     });
                 }
-            });
+            });*/
 
         }
 

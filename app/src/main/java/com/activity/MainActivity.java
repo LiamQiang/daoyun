@@ -1,6 +1,7 @@
 package com.activity;
 
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,13 +9,16 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.MyApplication;
+import com.bean.Constant;
 import com.example.trade.R;
 import com.fragment.CityFragment;
 import com.fragment.HomeFragment;
@@ -54,6 +58,8 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         resetTabIcon(0);
 
     }
+
+
 
     private View getTabView(int imageResID,String text,boolean onlyimage ){
         View view=null;
@@ -127,4 +133,6 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         ImageView iv=view.findViewById(R.id.iv_tabIcon);
         iv.setImageResource(arrayTabIconSel[mSelected]);
     }
+
+
 }

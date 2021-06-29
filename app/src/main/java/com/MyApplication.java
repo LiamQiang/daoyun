@@ -6,6 +6,9 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 
+import androidx.multidex.MultiDex;
+import androidx.multidex.MultiDexApplication;
+
 import com.bean.User;
 import com.example.trade.R;
 import com.nostra13.universalimageloader.cache.disc.impl.UnlimitedDiskCache;
@@ -19,7 +22,7 @@ import com.nostra13.universalimageloader.utils.StorageUtils;
 
 import java.io.File;
 
-public class MyApplication extends Application {
+public class MyApplication extends MultiDexApplication {
 
     public static User user;
 
@@ -32,6 +35,13 @@ public class MyApplication extends Application {
     }
 
     @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+        MultiDex.install(this);
+
+}
+
+    @Override
     public void onCreate() {
         super.onCreate();
         initImageLoader(getApplicationContext());
@@ -40,6 +50,8 @@ public class MyApplication extends Application {
     public static void initImageLoader(Context context) {
 
         File caahe= StorageUtils.getOwnCacheDirectory(context,"bradway/cache");//缓存目录
+        User user=new User();
+        setUser(user);
         ImageLoaderConfiguration.Builder config = new ImageLoaderConfiguration.Builder(context);
         config.threadPriority(Thread.NORM_PRIORITY - 2);
         config.memoryCache(new LruMemoryCache(7*1024*1024));

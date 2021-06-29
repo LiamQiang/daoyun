@@ -4,8 +4,28 @@
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.VIBRATE" /> <!-- 震动权限 -->
+    <uses-permission android:name="android.permission.CAMERA" /> <!-- 摄像头权限 -->
+    <uses-feature android:name="android.hardware.camera.autofocus" /> <!-- 自动聚焦权限 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"></uses-permission>
+    <!-- 这个权限用于访问GPS定位-->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"></uses-permission>
+    <!-- 用于访问wifi网络信息，wifi信息会用于进行网络定位-->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"></uses-permission>
+    <!-- 获取运营商信息，用于支持提供运营商信息相关的接口-->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
+    <!-- 这个权限用于获取wifi的获取权限，wifi信息会用来进行网络定位-->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"></uses-permission>
+    <!-- 写入扩展存储，向扩展卡写入数据，用于写入离线定位数据-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+    <!-- 访问网络，网络定位需要上网-->
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+
+
 
     <application
         android:allowBackup="true"
@@ -14,16 +34,41 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:name="com.MyApplication"
+        android:usesCleartextTraffic="true"
         android:theme="@android:style/Theme.Black.NoTitleBar">
-        <activity android:name="com.activity.WelcomeActivity">
+
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="H51LbGkQax9L8LrBD7PfeRl7FxYGRsrc" >
+        </meta-data>
+        <service android:name="com.baidu.location.f" android:enabled="true" android:process=":remote"> </service>
+
+        <uses-library android:name="org.apache.http.legacy" android:required="false" />
+
+        <activity android:name="com.activity.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
+
+
             </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="callback"
+                    android:scheme="huyaoyu"/>
+            </intent-filter>
+
         </activity>
         <activity android:name="com.activity.MainActivity"/>
-        <activity android:name="com.activity.LoginActivity"/>
+        <activity android:name="com.activity.StuListActivity"/>
+        <activity android:name="com.activity.WelcomeActivity"/>
+       <!-- <activity android:name="com.activity.LoginActivity"/>-->
         <activity android:name="com.activity.RegActivity"/>
         <activity android:name="com.activity.SettingActivity"/>
         <activity android:name="com.activity.ChatActivity"/>
@@ -40,6 +85,18 @@
         <activity android:name="com.activity.SysMessageActivity"/>
         <activity android:name="com.activity.RegPhoneActivity"/>
         <activity android:name="com.activity.RegVerifyActivity"/>
+        <activity android:name="com.activity.StuSign"/>
+        <activity android:name="com.activity.LimitTimeSign"/>
+        <activity android:name="com.activity.CreateClassActivity"/>
+        <activity android:name="com.activity.JoinClass"/>
+        <activity android:name="com.activity.EditInfoActivity"/>
+        <activity android:name="com.activity.AsignSigninActivity"/>
+        <activity android:name="com.activity.ClassInfoActivity"/>
+        <activity android:name="com.activity.GenerateQRcodeActivity"/>
+        <activity android:name="com.activity.githubActivity"/>
+        <activity android:name="com.google.zxing.activity.CaptureActivity"
+            android:configChanges="orientation|screenSize"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
     </application>
 
 </manifest>

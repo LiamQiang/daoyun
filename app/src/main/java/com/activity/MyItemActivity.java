@@ -1,38 +1,22 @@
 package com.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
-import com.APIInterface;
 import com.CommomList;
-import com.CommonBaseAdapter;
-import com.CommonViewHolder;
-import com.DateUtils;
-import com.HttpUtils;
-import com.MyApplication;
-import com.bean.Item;
+import com.bean.object;
 import com.example.trade.R;
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-import com.loopj.android.http.JsonHttpResponseHandler;
-
-import org.apache.http.Header;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class MyItemActivity extends BaseActivity {
-    List<Item> mList = new ArrayList<Item>();
+    List<object> mList = new ArrayList<object>();
     ListView listView;
-    CommomList<List<Item>> mcommomList;
+    CommomList<List<object>> mcommomList;
 
 
 
@@ -46,7 +30,7 @@ public class MyItemActivity extends BaseActivity {
     }
 
     private void sendRequest(){
-        HttpUtils.get(APIInterface.MY_ITEM+"?account="+MyApplication.getUser().getUsername()+"&p=1",responseHandler);
+        //HttpUtils.get(APIInterface.MY_ITEM+"?account="+MyApplication.getUser().getUsername()+"&p=1",responseHandler);
     }
 
     @Override
@@ -55,7 +39,7 @@ public class MyItemActivity extends BaseActivity {
         sendRequest();
     }
 
-    JsonHttpResponseHandler responseHandler= new JsonHttpResponseHandler(){
+   /* JsonHttpResponseHandler responseHandler= new JsonHttpResponseHandler(){
         @Override
         public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
             super.onSuccess(statusCode, headers, response);
@@ -128,7 +112,7 @@ public class MyItemActivity extends BaseActivity {
         public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
             super.onFailure(statusCode, headers, throwable, errorResponse);
         }
-    };
+    };*/
 
     private void initUI(){
         listView=findViewById(R.id.ListView);

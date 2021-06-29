@@ -1,37 +1,21 @@
 package com.activity;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
-import com.APIInterface;
 import com.CommomList;
-import com.CommonBaseAdapter;
-import com.CommonViewHolder;
-import com.DateUtils;
-import com.HttpUtils;
-import com.MyApplication;
-import com.bean.Item;
+import com.bean.object;
 import com.example.trade.R;
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-import com.loopj.android.http.JsonHttpResponseHandler;
 
-import org.apache.http.Header;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.Date;
 import java.util.List;
 
 public class SearchResuliActivity extends Activity {
     ListView listView;
-    CommomList<List<Item>> mcommomList;
+    CommomList<List<object>> mcommomList;
     private String content;
 
 
@@ -45,7 +29,7 @@ public class SearchResuliActivity extends Activity {
     }
 
     private void sendRequest(){
-        HttpUtils.get(APIInterface.HOME+"?kw="+ content,responseHandler);
+        //HttpUtils.get(APIInterface.HOME+"?kw="+ content,responseHandler);
     }
 
     @Override
@@ -54,7 +38,7 @@ public class SearchResuliActivity extends Activity {
         sendRequest();
     }
 
-    JsonHttpResponseHandler responseHandler= new JsonHttpResponseHandler(){
+   /* JsonHttpResponseHandler responseHandler= new JsonHttpResponseHandler(){
         @Override
         public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
             super.onSuccess(statusCode, headers, response);
@@ -128,7 +112,7 @@ public class SearchResuliActivity extends Activity {
             super.onFailure(statusCode, headers, throwable, errorResponse);
         }
     };
-
+*/
     private void initUI(){
         listView=findViewById(R.id.ListView);
         listView.setSelector(R.drawable.bg_mysell);

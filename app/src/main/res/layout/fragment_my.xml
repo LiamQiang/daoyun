@@ -59,7 +59,7 @@
                     android:src="@mipmap/account_icon" />
 
                 <TextView
-                    android:id="@+id/tvNoLogin"
+                    android:id="@+id/role"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
@@ -69,8 +69,19 @@
                     android:textColor="@color/colorAccent"
                     android:textSize="18sp" />
 
+                <TextView
+                    android:id="@+id/nickname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:layout_toRightOf="@+id/role"
+                    android:text="123"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="18sp" />
 
-                <Button
+
+                <!--<Button
                     android:id="@+id/LoginButton"
                     android:layout_width="wrap_content"
                     android:layout_height="35dp"
@@ -80,7 +91,8 @@
                     android:background="@drawable/bg_button_dark"
                     android:text="马上登录"
                     android:textColor="@color/colorAccent"
-                    android:textSize="18sp" />
+                    android:textSize="18sp" />-->
+
             </RelativeLayout>
 
             <!--登陆后-->
@@ -124,74 +136,82 @@
 
             </RelativeLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="95dp"
-                android:layout_marginTop="10dp"
-                android:orientation="horizontal"
-                android:layout_margin="10dp"
-                android:background="@drawable/bg_mysell">
+            <!--  <LinearLayout
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_marginTop="10dp"
+                 android:orientation="horizontal"
+                 android:layout_margin="10dp"
+                 android:background="@drawable/bg_mysell">
+
+                 <TextView
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:textColor="@color/black"
+                     android:text="修改个人信息"
+                     android:textSize="18sp"
+                     android:paddingLeft="10dp"/>
 
                 <RelativeLayout
-                    android:id="@+id/tvOnSell"
-                    android:layout_width="match_parent"
-                    android:layout_height="89dp"
-                    android:layout_weight="1">
+                     android:id="@+id/tvOnSell"
+                     android:layout_width="match_parent"
+                     android:layout_height="89dp"
+                     android:layout_weight="1">
 
-                    <ImageView
-                        android:id="@+id/entry_icon_on_shelf"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginLeft="50dp"
-                        android:layout_marginTop="15dp"
-                        android:layout_weight="1"
-                        android:src="@mipmap/entry_icon_on_shelf" />
+                     <ImageView
+                         android:id="@+id/entry_icon_on_shelf"
+                         android:layout_width="30dp"
+                         android:layout_height="30dp"
+                         android:layout_centerHorizontal="true"
+                         android:layout_marginLeft="50dp"
+                         android:layout_marginTop="15dp"
+                         android:layout_weight="1"
+                         android:src="@mipmap/entry_icon_on_shelf" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignBottom="@id/entry_icon_on_shelf"
-                        android:layout_centerInParent="true"
-                        android:layout_marginLeft="-44dp"
-                        android:layout_marginBottom="-29dp"
-                        android:layout_toRightOf="@id/entry_icon_on_shelf"
-                        android:text="@string/onsale"
-                        android:textColor="@color/colorAccent"
-                        android:textSize="15sp" />
+                     <TextView
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:layout_alignBottom="@id/entry_icon_on_shelf"
+                         android:layout_centerInParent="true"
+                         android:layout_marginLeft="-44dp"
+                         android:layout_marginBottom="-29dp"
+                         android:layout_toRightOf="@id/entry_icon_on_shelf"
+                         android:text="@string/onsale"
+                         android:textColor="@color/colorAccent"
+                         android:textSize="15sp" />
 
-                </RelativeLayout>
+                 </RelativeLayout>
 
-                <RelativeLayout
-                    android:id="@+id/tvMyFavor"
-                    android:layout_width="match_parent"
-                    android:layout_height="89dp"
-                    android:layout_weight="1">
+                 <RelativeLayout
+                     android:id="@+id/tvMyFavor"
+                     android:layout_width="match_parent"
+                     android:layout_height="89dp"
+                     android:layout_weight="1">
 
-                    <ImageView
-                        android:layout_centerHorizontal="true"
-                        android:id="@+id/entry_icon_on_shelf2"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_marginLeft="50dp"
-                        android:layout_marginTop="15dp"
-                        android:layout_weight="1"
-                        android:src="@mipmap/entry_icon_favourite" />
+                     <ImageView
+                         android:layout_centerHorizontal="true"
+                         android:id="@+id/entry_icon_on_shelf2"
+                         android:layout_width="30dp"
+                         android:layout_height="30dp"
+                         android:layout_marginLeft="50dp"
+                         android:layout_marginTop="15dp"
+                         android:layout_weight="1"
+                         android:src="@mipmap/entry_icon_favourite" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignBottom="@id/entry_icon_on_shelf2"
-                        android:layout_centerInParent="true"
-                        android:layout_marginLeft="-30dp"
-                        android:layout_marginBottom="-28dp"
-                        android:layout_toRightOf="@id/entry_icon_on_shelf2"
-                        android:text="@string/love"
-                        android:textColor="@color/colorAccent"
-                        android:textSize="15sp" />
+                     <TextView
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:layout_alignBottom="@id/entry_icon_on_shelf2"
+                         android:layout_centerInParent="true"
+                         android:layout_marginLeft="-30dp"
+                         android:layout_marginBottom="-28dp"
+                         android:layout_toRightOf="@id/entry_icon_on_shelf2"
+                         android:text="@string/love"
+                         android:textColor="@color/colorAccent"
+                         android:textSize="15sp" />
 
-                </RelativeLayout>
-            </LinearLayout>
+                 </RelativeLayout>
+             </LinearLayout>-->
 
 
 

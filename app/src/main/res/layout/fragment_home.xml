@@ -44,11 +44,17 @@
             </LinearLayout>
         </ScrollView>
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/gray"/>
 
         <RelativeLayout
             android:id="@+id/homebar"
             android:layout_width="match_parent"
             android:layout_height="40dp"
+            android:background="@color/white"
             android:orientation="horizontal">
 
             <TextView
@@ -87,10 +93,12 @@
 
         </RelativeLayout>
 
+
+
         <RelativeLayout
-            android:id="@+id/ivSearch"
+            android:id="@+id/popupHeigth"
             android:layout_width="match_parent"
-            android:layout_height="30dp"
+            android:layout_height="130dp"
             android:layout_marginTop="50dp"
             android:background="#00000000">
 
@@ -100,6 +108,7 @@
                >
 
                 <LinearLayout
+                    android:id="@+id/ivSearch"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/bg_search"

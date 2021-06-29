@@ -26,7 +26,7 @@
         android:orientation="vertical">
 
 
-        <RelativeLayout
+     <!--   <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
@@ -34,7 +34,7 @@
                 android:id="@+id/name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="姓名"
+                android:text="昵称"
                 android:textColor="@color/black"
                 android:layout_marginLeft="80dp"
                 android:layout_centerVertical="true"
@@ -54,7 +54,7 @@
                     android:layout_height="44dp"
                     android:layout_marginLeft="50dp"
                     android:background="#FFF"
-                    android:hint="@string/inputaccount"
+                    android:hint="非必填"
 
                     android:selectAllOnFocus="false"
                     android:singleLine="false" />
@@ -72,8 +72,7 @@
 
 
 
-        </RelativeLayout>
-
+        </RelativeLayout>-->
 
 
         <RelativeLayout
@@ -83,7 +82,7 @@
                 android:id="@+id/nickname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="昵称"
+                android:text="密码"
                 android:textColor="@color/black"
                 android:layout_marginLeft="80dp"
                 android:layout_centerVertical="true"
@@ -102,7 +101,7 @@
                     android:layout_height="44dp"
                     android:layout_marginLeft="50dp"
                     android:background="#FFF"
-                    android:hint="@string/inputaccount"
+                    android:hint="必填"
 
                     android:selectAllOnFocus="false"
                     android:singleLine="false" />
@@ -117,14 +116,70 @@
             </LinearLayout>
         </RelativeLayout>
 
-        <RelativeLayout
+
+        <!--<RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
             <TextView
                 android:id="@+id/role"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="昵称"
+                android:text="角色"
+                android:textColor="@color/black"
+                android:layout_marginLeft="80dp"
+                android:layout_centerVertical="true"
+                android:textSize="15sp">
+            </TextView>
+
+            <RadioGroup
+                android:id="@+id/radioGrouprole"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:orientation="horizontal"
+                android:layout_toRightOf="@id/role">
+
+
+                <RadioButton
+                    android:id="@+id/radiotec"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onRadioButtonClicked"
+                    android:textColor="@color/black"
+                    android:text="教师" >
+
+                </RadioButton>
+
+                <RadioButton
+                    android:id="@+id/radiostu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onRadioButtonClicked"
+                    android:textColor="@color/black"
+                    android:text="学生" >
+
+                </RadioButton>
+            </RadioGroup>
+
+            <LinearLayout
+
+                android:layout_toRightOf="@+id/role"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/sex"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="性别"
                 android:textColor="@color/black"
                 android:layout_marginLeft="80dp"
                 android:layout_centerVertical="true"
@@ -137,7 +192,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"
                 android:orientation="horizontal"
-                android:layout_toRightOf="@id/role">
+                android:layout_toRightOf="@id/sex">
 
 
                 <RadioButton
@@ -163,7 +218,7 @@
 
             <LinearLayout
 
-                android:layout_toRightOf="@+id/role"
+                android:layout_toRightOf="@+id/sex"
                 android:orientation="vertical"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
@@ -240,7 +295,7 @@
                     android:layout_height="44dp"
                     android:layout_marginLeft="50dp"
                     android:background="#FFF"
-                    android:hint="@string/inputaccount"
+                    android:hint="非必填"
 
                     android:selectAllOnFocus="false"
                     android:singleLine="false" />
@@ -281,7 +336,7 @@
                     android:layout_height="44dp"
                     android:layout_marginLeft="50dp"
                     android:background="#FFF"
-                    android:hint="@string/inputaccount"
+                    android:hint="非必填"
 
                     android:selectAllOnFocus="false"
                     android:singleLine="false" />
@@ -322,7 +377,7 @@
                     android:layout_height="44dp"
                     android:layout_marginLeft="50dp"
                     android:background="#FFF"
-                    android:hint="@string/inputaccount"
+                    android:hint="非必填"
 
                     android:selectAllOnFocus="false"
                     android:singleLine="false" />
@@ -335,7 +390,7 @@
 
                 </View>
             </LinearLayout>
-        </RelativeLayout>
+        </RelativeLayout>-->
 
         <Button
             android:id="@+id/regbutton"

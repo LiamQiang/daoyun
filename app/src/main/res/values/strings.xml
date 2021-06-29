@@ -13,5 +13,11 @@
     <string name="love">收藏</string>
     <string name="resign">注销</string>
     <string name="setting">设置</string>
+    <string-array name="auto" >
+                <item>2020-2021-2</item>
+                <item>2021-2022-1</item>
+                <item>2022-2023-1</item>
+                <item>2022-2023-2</item>
+            </string-array>
 
 </resources>

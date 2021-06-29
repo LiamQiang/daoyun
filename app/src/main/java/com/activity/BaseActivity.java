@@ -13,9 +13,6 @@ public class BaseActivity extends Activity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (MyApplication.user.getUid()==0){
-            startActivity(new Intent(this,LoginActivity.class));
-            finish();
-        }
+
     }
 }

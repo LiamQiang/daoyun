@@ -39,10 +39,10 @@ public class MessageFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootview=inflater.inflate(R.layout.fragment_message,container,false);
-        initUI(rootview);
+        //initUI(rootview);
         return rootview;
     }
-    private void initUI(View rootview){
+    /*private void initUI(View rootview){
         systemMessage=rootview.findViewById(R.id.systemMessage);
         listView=rootview.findViewById(R.id.ListView);
         HttpUtils.get(APIInterface.COMMENT_MY+"?username="+ MyApplication.getUser().getUsername(),new JsonHttpResponseHandler(){
@@ -89,7 +89,7 @@ public class MessageFragment extends Fragment {
                 startActivity(it);
             }
         });
-    }
+    }*/
   /*  private List<Message> getData(){
         List<Message> list=new ArrayList<Message>();
         Message messag4e=new Message(R.mipmap.picre2,1,"系统消息","mo","4");

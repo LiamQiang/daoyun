@@ -21,16 +21,12 @@ import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import com.APIInterface;
-import com.CommonBaseAdapter;
-import com.CommonViewHolder;
 import com.HttpUtils;
 import com.MyApplication;
 import com.MyListView;
 import com.bean.Comment;
-import com.bean.Item;
 import com.bean.Pic;
 import com.example.trade.R;
-import com.google.gson.Gson;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 import com.nostra13.universalimageloader.core.ImageLoader;
@@ -64,7 +60,7 @@ public class ItemDetailActivity extends Activity implements View.OnClickListener
         setContentView(R.layout.activity_item_detail);
         id=getIntent().getStringExtra("id");
         initUi();
-        sendRequest();
+        //sendRequest();
 
     }
 
@@ -197,12 +193,12 @@ public class ItemDetailActivity extends Activity implements View.OnClickListener
 
 
     //显示商品数据
-    private void sendRequest(){
+   /* private void sendRequest(){
 
         HttpUtils.get(APIInterface.ITEM_VIEW+"?id="+id,responseHandler);
-    }
+    }*/
 
-    JsonHttpResponseHandler responseHandler= new JsonHttpResponseHandler(){
+    /*JsonHttpResponseHandler responseHandler= new JsonHttpResponseHandler(){
         @Override
         public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
             super.onSuccess(statusCode, headers, response);
@@ -285,7 +281,7 @@ public class ItemDetailActivity extends Activity implements View.OnClickListener
             }
             mlv.setFocusable(false);
         }
-    };
+    };*/
 
     private  class PicViewPagerAdater extends PagerAdapter {
 

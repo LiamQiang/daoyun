@@ -1,43 +1,25 @@
 package com.fragment;
 
 import android.content.Intent;
-import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.GridView;
-import android.widget.ListView;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
-import android.widget.SimpleAdapter;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.APIInterface;
 import com.CommomList;
-import com.CommonBaseAdapter;
-import com.CommonViewHolder;
-import com.HttpUtils;
 import com.activity.CateActivity;
-import com.activity.ItemDetailActivity;
-import com.bean.Item;
+import com.bean.object;
 import com.example.trade.R;
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-import com.loopj.android.http.JsonHttpResponseHandler;
 
-import org.apache.http.Header;
-import org.json.JSONObject;
-
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 public class CityFragment extends Fragment  {
@@ -48,7 +30,7 @@ public class CityFragment extends Fragment  {
     TextView mTextview;
     LayoutInflater mLayoutInflater;
     GridView mitemGridView;
-    CommomList<List<Item>> mCommomList;
+    CommomList<List<object>> mCommomList;
     RelativeLayout mobile,book,shose,other;
 
     @Nullable
@@ -81,17 +63,17 @@ public class CityFragment extends Fragment  {
             getActivity().startActivity(intent);
         });
         initTab(rootview);
-        initItemGridView();
+       // initItemGridView();
         return rootview;
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        initItemGridView();
+        //initItemGridView();
     }
 
-    private void initItemGridView(){
+    /*private void initItemGridView(){
         HttpUtils.get(APIInterface.HOME+"?city=",new JsonHttpResponseHandler(){
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
@@ -125,7 +107,7 @@ public class CityFragment extends Fragment  {
             it.putExtra("id",mCommomList.getList().get(position).getId());
             startActivity(it);
         });
-        /*mitemGridView.setAdapter(new CommonBaseAdapter<Item>(getActivity(),initItemData(),R.layout.sub_city_grid) {
+        *//*mitemGridView.setAdapter(new CommonBaseAdapter<Item>(getActivity(),initItemData(),R.layout.sub_city_grid) {
             @Override
             protected void convert(CommonViewHolder viewHolder, Item item) {
                 viewHolder.setImageResource(R.id.ivPic,item.getPic(),1,2)
@@ -133,9 +115,9 @@ public class CityFragment extends Fragment  {
                         .setTextView(R.id.tvPrice,"￥"+item.getPrice())
                         .setTextView(R.id.tvDistrict,item.getCity());
             }
-        });*/
+        });*//*
     }
-
+*/
    /* private List<Item> initItemData(){
         List<Item> list=new ArrayList<Item>();
         Item item=new Item(1,"120","标题标题","广东工业大学",R.mipmap.pic2);
@@ -173,12 +155,12 @@ public class CityFragment extends Fragment  {
         public void onClick(View v) {
             switch (v.getId()){
                 case R.id.tabChooseCity:
-                    initWindow(v);
+                    //initWindow(v);
 
                     break;
             }
         }
-        private void initWindow(View view){
+        /*private void initWindow(View view){
             ArrayList<HashMap<String,String>> data= new ArrayList<>();
             HashMap<String, String> map0=new HashMap<>();
             HashMap<String, String> map1=new HashMap<>();
@@ -245,7 +227,7 @@ public class CityFragment extends Fragment  {
             mpopupWindow.setFocusable(true);
             mpopupWindow.showAsDropDown(tabChooseCity);
 
-        }
+        }*/
 
     }
 }

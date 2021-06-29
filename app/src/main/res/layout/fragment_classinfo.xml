@@ -5,23 +5,81 @@
     android:background="#FFF"
     android:layout_height="match_parent">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/white">
+        <TextView
+            android:id="@+id/classInfoTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="加入班级"
+            android:textSize="25sp"
+            android:layout_centerInParent="true"
+            android:textColor="@color/colorAccent"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            >
+        </TextView>
+
+        <TextView
+            android:id="@+id/quiteClass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="退出班课"
+            android:layout_marginRight="10dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:textSize="15sp"
+            android:textColor="@color/colorAccent"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            >
+        </TextView>
+
+    </RelativeLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:background="@color/base_color">
-        <TextView
+
+
+
+        <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="加入班级"
-            android:textSize="30sp"
-            android:textColor="@color/colorAccent"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="40dp"
-            >
-        </TextView>
+            android:layout_height="wrap_content">
+
+
+            <TextView
+                android:id="@+id/nontvclassId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="班课号:"
+                android:textSize="20sp"
+                android:textColor="@color/colorAccent"
+                >
+            </TextView>
+
+            <TextView
+                android:id="@+id/classId"
+                android:layout_toRightOf="@id/nontvclassId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="id"
+                android:textSize="20sp"
+                android:textColor="@color/colorAccent"
+
+                >
+            </TextView>
+        </RelativeLayout>
+
 
         <ImageView
+            android:id="@+id/classQRcode"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@mipmap/classpic"
@@ -29,6 +87,7 @@
             android:layout_marginTop="10dp"/>
 
         <TextView
+            android:id="@+id/className"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="加入班级"
@@ -39,6 +98,7 @@
             >
         </TextView>
         <TextView
+            android:id="@+id/semester"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="加入班级"
@@ -68,7 +128,7 @@
              android:layout_marginBottom="10dp" />
 
          <TextView
-             android:id="@+id/teacherName"
+             android:id="@+id/tecName"
              android:layout_width="wrap_content"
              android:layout_height="wrap_content"
              android:text="赵坤"
@@ -83,7 +143,7 @@
              android:layout_width="match_parent"
              android:layout_height="0.5dp"
              android:background="@color/base_color"
-             android:layout_below="@+id/teacherName"/>
+             android:layout_below="@+id/tecName"/>
 
     </RelativeLayout>
 
@@ -120,14 +180,44 @@
             android:layout_below="@+id/schoolNmae"/>
 
     </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tecCheck"
+        >
+
+        <CheckBox
+            android:id="@+id/checkBox"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="允许加入"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            />
+    </RelativeLayout>
+
+
     <Button
-        android:id="@+id/loginbutton"
+        android:id="@+id/stuLsit"
         android:layout_width="312dp"
         android:layout_height="47dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/bg_button"
-        android:text="加入"
+        android:text="班课成员"
+        />
+    <Button
+        android:id="@+id/joinClasss"
+        android:layout_width="312dp"
+        android:layout_height="47dp"
+        android:layout_gravity="center_horizontal"
+
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_button"
+        android:text="确定"
         />
 </LinearLayout>
 

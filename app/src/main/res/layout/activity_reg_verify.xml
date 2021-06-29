@@ -27,6 +27,7 @@
 
 
         <TextView
+            android:id="@+id/tip"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="60dp"
@@ -52,10 +53,11 @@
 
             <TextView
                 android:layout_toRightOf="@+id/yanzhengma"
+                android:id="@+id/verivfTel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
-                android:text="18900871234"
+                android:text=""
                 android:textColor="@color/cardview_dark_background"
                 android:textSize="15sp"></TextView>
 
@@ -81,6 +83,17 @@
             android:layout_marginRight="70dp"
             android:background="@color/gray" />
 
+
+        <Button
+            android:id="@+id/reSendButton"
+            style="@android:style/Widget.DeviceDefault.Light.Button"
+            android:layout_width="256dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/bg_button"
+            android:textColor="@color/white"
+            android:text="重新发送" />
 
         <Button
             android:id="@+id/regbutton"
